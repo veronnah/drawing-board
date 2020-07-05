@@ -2,6 +2,10 @@ const paint = document.querySelector('.paint');
 
 const context = paint.getContext('2d');
 
+const colorPicker = document.querySelector(".js-color-picker");
+const eraser = document.querySelector(".js-eraser-elem");
+const eraseBtn = document.querySelector(".js-erase-btn");
+
 const state = { // обьект в котором прописываем дефолтные значения.. в последующих действия в функции draw будем брать отсюда данные
     isDrawing: false,
     prevX: 0,
@@ -11,7 +15,6 @@ const state = { // обьект в котором прописываем деф�
     strokeStyle: 'black',
     lineWidth: 2,
 };
-
 function initDrawing() {
     paint.addEventListener('mousedown', evt => {
         getCoords('down', evt);
@@ -63,3 +66,23 @@ function getCoords(type, evt) { // функция для отслеживани�
         state.isDrawing = false;
     }
 }
+
+function toggleColor(){
+    state.strokeStyle = colorPicker.value;
+    state.lineWidth = 2;
+    paint.style.cursor = "url(./paint-pencil.png), auto";
+}
+
+function setEraser(){
+    state.strokeStyle = "white";
+    state.lineWidth = 14;
+    paint.style.cursor = "url(./paint-eraser.png), auto";
+}
+
+function clear(){
+    context.clearRect(0, 0, paint.clientWidth, paint.clientHeight)
+}
+
+colorPicker.addEventListener('input', toggleColor);
+eraser.addEventListener('click', setEraser);
+eraseBtn.addEventListener('click', clear);

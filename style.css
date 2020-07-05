@@ -3,7 +3,90 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: monospace; 
+    font-size: 15px;
+    line-height: 1.2;
+    background-color: rgb(248, 237, 237);
+}
+button, input{
+    cursor: pointer;
+}
+input[type = "color"]{
+    -webkit-appearance: none;
+    outline: none;
+}
+input[type = "color"]::-webkit-color-swatch-wrapper{
+    padding: 0;
+}
+input[type = "color"]::-webkit-color-swatch{
+    border: none;
+}
 .paint{
     box-shadow: 0 0 4px 4px rgba(0, 0, 0, .3);
     background-color: #fff;
+    cursor: url("./paint-pencil.png"), auto;
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tools{
+    margin-left: 24px;
+}
+.color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.tool-title {
+    font-size: 20px;
+    margin-right: 12px;
+}
+.color-picker__field {
+    border: none;
+    width: 18px;
+    height: 18px;
+}
+.js-color-picker {
+}
+.eraser {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.eraser__elem {
+    width: 18px;
+    height: 18px;
+    border: 1px dotted #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+.js-eraser-elem {
+}
+.erase {
+}
+.erase__btn {
+    border: 1px solid #000;
+    border-radius: 0;
+    outline: none;
+    background-color: #fff;
+    -webkit-appearance: none;
+    padding: 6px 18px;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 500;
+}
+.js-erase-btn {
 }

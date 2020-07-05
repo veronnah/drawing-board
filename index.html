@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawing</title>
+    <title>Draw app</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="wrapper">
         <div class="row">
             <canvas class="paint" width="400" height="400"></canvas>
+            <div class="tools">
+                <div class="color-picker">
+                    <h3 class="tool-title">Color</h3>
+                    <input type="color" class="color-picker__field js-color-picker" value="#000">
+                </div>
+                <div class="eraser">
+                    <h3 class="tool-title">Eraser</h3>
+                    <div class="eraser__elem js-eraser-elem"></div>
+                </div>
+                <div class="erase">
+                    <button class="erase__btn js-erase-btn">Clear</button>
+                </div>
+            </div>
         </div> 
     </div>
     <script src="main.js"></script>
